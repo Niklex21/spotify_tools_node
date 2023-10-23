@@ -1,5 +1,8 @@
 ---
+import { getLikedSongs } from "./api/spotify"
 
+let response = await getLikedSongs(Astro);
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -11,6 +14,6 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>{ data.songs }</h1>
 	</body>
 </html>
